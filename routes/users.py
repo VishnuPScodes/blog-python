@@ -1,9 +1,9 @@
 
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI,APIRouter, Depends, HTTPException
 
-app = FastAPI()
+router = APIRouter()
 
-@app.get("/users/{user_id}")
+@router.get("/users/{user_id}")
 async def read_user(user_id: int, q: str = None):
     return {"user_id": user_id, "q": q}
 
